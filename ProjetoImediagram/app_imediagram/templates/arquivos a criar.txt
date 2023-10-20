@@ -1,0 +1,5 @@
+criarconta.html
+feed.html
+homepage.html
+navbar.html
+perfil.html

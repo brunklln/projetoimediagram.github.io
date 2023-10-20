@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Feed</h1>
+    <p>Bem-vindo ao feed do Imediagram.</p>
+
+    <h2>Fotos Recentes</h2>
+    <div class="foto-container">
+        {% for foto in fotos %}
+            <div class="foto">
+                <img src="{{ url_for('static', filename='fotos_posts/' ~ foto.imagem) }}" alt="Foto">
+                <p>Data de Criação: {{ foto.data_criacao }}</p>
+                <p>Visualizações: {{ foto.visualizacoes }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="{{ url_for('homepage') }}">Voltar para a Homepage</a>
+</body>
+</html>
